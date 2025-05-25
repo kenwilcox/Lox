@@ -6,6 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BE6BCC192DDFD540006161BC /* compiler.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC0B2DDFD540006161BC /* compiler.c */; };
+		BE6BCC1A2DDFD540006161BC /* debug.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC0D2DDFD540006161BC /* debug.c */; };
+		BE6BCC1B2DDFD540006161BC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC0E2DDFD540006161BC /* main.c */; };
+		BE6BCC1C2DDFD540006161BC /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC102DDFD540006161BC /* memory.c */; };
+		BE6BCC1D2DDFD540006161BC /* object.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC122DDFD540006161BC /* object.c */; };
+		BE6BCC1E2DDFD540006161BC /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC142DDFD540006161BC /* scanner.c */; };
+		BE6BCC1F2DDFD540006161BC /* value.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC162DDFD540006161BC /* value.c */; };
+		BE6BCC202DDFD540006161BC /* vm.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC182DDFD540006161BC /* vm.c */; };
+		BE6BCC212DDFD540006161BC /* chunk.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC082DDFD540006161BC /* chunk.c */; };
+		BE6BCC252DE23026006161BC /* table.c in Sources */ = {isa = PBXBuildFile; fileRef = BE6BCC232DE23024006161BC /* table.c */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		BED391B52DC6CD6C00ECE135 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,16 +32,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE6BCC072DDFD540006161BC /* chunk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chunk.h; sourceTree = "<group>"; };
+		BE6BCC082DDFD540006161BC /* chunk.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = chunk.c; sourceTree = "<group>"; };
+		BE6BCC092DDFD540006161BC /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		BE6BCC0A2DDFD540006161BC /* compiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compiler.h; sourceTree = "<group>"; };
+		BE6BCC0B2DDFD540006161BC /* compiler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = compiler.c; sourceTree = "<group>"; };
+		BE6BCC0C2DDFD540006161BC /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		BE6BCC0D2DDFD540006161BC /* debug.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = debug.c; sourceTree = "<group>"; };
+		BE6BCC0E2DDFD540006161BC /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BE6BCC0F2DDFD540006161BC /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		BE6BCC102DDFD540006161BC /* memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		BE6BCC112DDFD540006161BC /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		BE6BCC122DDFD540006161BC /* object.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = object.c; sourceTree = "<group>"; };
+		BE6BCC132DDFD540006161BC /* scanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scanner.h; sourceTree = "<group>"; };
+		BE6BCC142DDFD540006161BC /* scanner.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = scanner.c; sourceTree = "<group>"; };
+		BE6BCC152DDFD540006161BC /* value.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		BE6BCC162DDFD540006161BC /* value.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = value.c; sourceTree = "<group>"; };
+		BE6BCC172DDFD540006161BC /* vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vm.h; sourceTree = "<group>"; };
+		BE6BCC182DDFD540006161BC /* vm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vm.c; sourceTree = "<group>"; };
+		BE6BCC222DE22F44006161BC /* table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = table.h; sourceTree = "<group>"; };
+		BE6BCC232DE23024006161BC /* table.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = table.c; sourceTree = "<group>"; };
 		BED391B72DC6CD6C00ECE135 /* clox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clox; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		BED391B92DC6CD6C00ECE135 /* clox */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = clox;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BED391B42DC6CD6C00ECE135 /* Frameworks */ = {
@@ -44,8 +69,27 @@
 		BED391AE2DC6CD6C00ECE135 = {
 			isa = PBXGroup;
 			children = (
-				BED391B92DC6CD6C00ECE135 /* clox */,
 				BED391B82DC6CD6C00ECE135 /* Products */,
+				BE6BCC072DDFD540006161BC /* chunk.h */,
+				BE6BCC082DDFD540006161BC /* chunk.c */,
+				BE6BCC092DDFD540006161BC /* common.h */,
+				BE6BCC0A2DDFD540006161BC /* compiler.h */,
+				BE6BCC0B2DDFD540006161BC /* compiler.c */,
+				BE6BCC0C2DDFD540006161BC /* debug.h */,
+				BE6BCC0D2DDFD540006161BC /* debug.c */,
+				BE6BCC0E2DDFD540006161BC /* main.c */,
+				BE6BCC0F2DDFD540006161BC /* memory.h */,
+				BE6BCC102DDFD540006161BC /* memory.c */,
+				BE6BCC112DDFD540006161BC /* object.h */,
+				BE6BCC122DDFD540006161BC /* object.c */,
+				BE6BCC132DDFD540006161BC /* scanner.h */,
+				BE6BCC142DDFD540006161BC /* scanner.c */,
+				BE6BCC222DE22F44006161BC /* table.h */,
+				BE6BCC232DE23024006161BC /* table.c */,
+				BE6BCC152DDFD540006161BC /* value.h */,
+				BE6BCC162DDFD540006161BC /* value.c */,
+				BE6BCC172DDFD540006161BC /* vm.h */,
+				BE6BCC182DDFD540006161BC /* vm.c */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +115,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				BED391B92DC6CD6C00ECE135 /* clox */,
 			);
 			name = clox;
 			packageProductDependencies = (
@@ -120,6 +161,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6BCC252DE23026006161BC /* table.c in Sources */,
+				BE6BCC192DDFD540006161BC /* compiler.c in Sources */,
+				BE6BCC1A2DDFD540006161BC /* debug.c in Sources */,
+				BE6BCC1B2DDFD540006161BC /* main.c in Sources */,
+				BE6BCC1C2DDFD540006161BC /* memory.c in Sources */,
+				BE6BCC1D2DDFD540006161BC /* object.c in Sources */,
+				BE6BCC1E2DDFD540006161BC /* scanner.c in Sources */,
+				BE6BCC1F2DDFD540006161BC /* value.c in Sources */,
+				BE6BCC202DDFD540006161BC /* vm.c in Sources */,
+				BE6BCC212DDFD540006161BC /* chunk.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
