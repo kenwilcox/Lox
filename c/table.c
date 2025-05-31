@@ -119,7 +119,8 @@ void tableAddAll(Table* from, Table* to) {
     }
 }
 
-ObjString* tableFindString(Table* table, const char* chars, int length, uint32_t hash) {
+ObjString* tableFindString(Table* table, const char* chars,
+                           int length, uint32_t hash) {
     if (table->count == 0) return NULL;
 
     uint32_t index = hash % table->capacity;
@@ -136,5 +137,23 @@ ObjString* tableFindString(Table* table, const char* chars, int length, uint32_t
         }
 
         index = (index + 1) % table->capacity;
+    }
+}
+
+void tableRemoveWhite(Table* table) {
+    for (int i = 0; i < table->capacity; i++) {
+        Entry* entry = &table->entries[i];
+        if (entry->key != NULL && !entry->key->obj.isMarked) {
+            tableDelete(table, entry->key);
+        }
+    }
+}
+
+
+void markTable(Table* table) {
+    for (int i = 0; i < table->capacity; i++) {
+        Entry* entry = &table->entries[i];
+        markObject((Obj*)entry->key);
+        markValue(entry->value);
     }
 }
