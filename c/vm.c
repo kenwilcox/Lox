@@ -46,7 +46,8 @@ static void runtimeError(const char* format, ...) {
         CallFrame* frame = &vm.frames[i];
         ObjFunction* function = frame->closure->function;
         size_t instruction = frame->ip - function->chunk.code - 1;
-        fprintf(stderr, "[line %d] in ", function->chunk.lines[instruction]);
+        fprintf(stderr, "[line %d] in ",
+                function->chunk.lines[instruction]);
 
         if (function->name == NULL) {
             fprintf(stderr, "script\n");
@@ -108,7 +109,8 @@ static Value peek(int distance) {
 
 static bool call(ObjClosure* closure, int argCount) {
     if (argCount != closure->function->arity) {
-        runtimeError("Expected %d arguments but got %d.", closure->function->arity, argCount);
+        runtimeError("Expected %d arguments but got %d.",
+                     closure->function->arity, argCount);
         return false;
     }
 
@@ -128,7 +130,7 @@ static bool callValue(Value callee, int argCount) {
     if (IS_OBJ(callee)) {
         switch(OBJ_TYPE(callee)) {
             case OBJ_BOUND_METHOD: {
-                ObjBoundMethod* bound = AS_BOUND_METHOD((callee));
+                ObjBoundMethod* bound = AS_BOUND_METHOD(callee);
                 vm.stackTop[-argCount - 1] = bound->receiver;
                 return call(bound->method, argCount);
             }
@@ -159,7 +161,7 @@ static bool callValue(Value callee, int argCount) {
                 break; // Non-callable object type.
         }
     }
-    runtimeError("Can only call functions and classes");
+    runtimeError("Can only call functions and classes.");
     return false;
 }
 
@@ -416,7 +418,8 @@ static InterpretResult run(void) {
                     double a = AS_NUMBER(pop());
                     push(NUMBER_VAL(a + b));
                 } else {
-                    runtimeError("Operands must be two numbers or two strings.");
+                    runtimeError(
+                                 "Operands must be two numbers or two strings.");
                     return INTERPRET_RUNTIME_ERROR;
                 }
                 break;

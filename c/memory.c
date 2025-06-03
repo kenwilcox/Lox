@@ -217,17 +217,6 @@ static void sweep(void) {
     }
 }
 
-void freeObjects(void) {
-    Obj* object = vm.objects;
-    while (object != NULL) {
-        Obj* next = object->next;
-        freeObject(object);
-        object = next;
-    }
-
-    free(vm.grayStack);
-}
-
 void collectGarbage(void) {
 #ifdef DEBUG_LOG_GC
     printf("-- gc begin\n");
@@ -247,4 +236,15 @@ void collectGarbage(void) {
            before - vm.bytesAllocated, before, vm.bytesAllocated,
            vm.nextGC);
 #endif
+}
+
+void freeObjects(void) {
+    Obj* object = vm.objects;
+    while (object != NULL) {
+        Obj* next = object->next;
+        freeObject(object);
+        object = next;
+    }
+
+    free(vm.grayStack);
 }

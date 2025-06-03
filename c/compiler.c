@@ -62,7 +62,7 @@ typedef enum {
     TYPE_FUNCTION,
     TYPE_INITIALIZER,
     TYPE_METHOD,
-    TYPE_SCRIPT,
+    TYPE_SCRIPT
 } FunctionType;
 
 typedef struct Compiler {
@@ -295,7 +295,8 @@ static int resolveLocal(Compiler* compiler, Token* name) {
     return -1;
 }
 
-static int addUpvalue(Compiler* compiler, uint8_t index, bool isLocal) {
+static int addUpvalue(Compiler* compiler, uint8_t index,
+                      bool isLocal) {
     int upvalueCount = compiler->function->upvalueCount;
     
     for (int i = 0; i < upvalueCount; i++) {
@@ -342,7 +343,7 @@ static void addLocal(Token name) {
     local->name = name;
     local->depth = -1;
     local->isCaptured = false;
-    local->depth = current->scopeDepth;
+    //local->depth = current->scopeDepth; //??
 }
 
 static void declareVariable(void) {
