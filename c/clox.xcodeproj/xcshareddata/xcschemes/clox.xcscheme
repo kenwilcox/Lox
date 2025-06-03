@@ -53,8 +53,8 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/ken/Developer/Lox/c/_test.lox"
-            isEnabled = "NO">
+            argument = "$(SRCROOT)/_test.lox"
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
